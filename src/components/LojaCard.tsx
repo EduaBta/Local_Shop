@@ -8,6 +8,11 @@ interface Props {
   loja: Loja;
 }
 
+type RootStackParamList = {
+  Home: undefined;
+  Detalhes: { loja: Loja };
+};
+
 export default function LojaCard({ loja }: Props) {
   const navigation = useNavigation<StackNavigationProp>();
   return (

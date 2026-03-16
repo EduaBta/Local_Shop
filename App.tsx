@@ -23,7 +23,7 @@ export default function App() {
         <Stack.Screen 
           name="Detalhes" 
           component={LojaDetalhes} 
-          options={({ route }) => ({ title: route.params.loja.nome })} 
+          options={({ route }) => ({ title: route.params.Loja.nome })} 
         />
       </Stack.Navigator>
     </NavigationContainer>
