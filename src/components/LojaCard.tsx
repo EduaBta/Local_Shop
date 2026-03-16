@@ -1,9 +1,15 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './StyleLojaCard';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Loja } from '../@types/loja';
 
-export default function LojaCard({ loja }) {
-  const navigation = useNavigation();
+interface Props {
+  loja: Loja;
+}
+
+export default function LojaCard({ loja }: Props) {
+  const navigation = useNavigation<StackNavigationProp>();
   return (
     <TouchableOpacity 
       style={styles.card}

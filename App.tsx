@@ -3,7 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './src/screens/Home/HomeScreen';
 import LojaDetalhes from './src/screens/Details/LojaDetalhes';
+import { Loja } from './src/@types/loja';
 
+export type RootStackParamList = {
+  Home: undefined; //Não recebe parâmetros;
+  Detalhes: {loja:Loja} ; // Precisa receber um objeto Loja
+};
 const Stack = createStackNavigator();
 
 export default function App() {
