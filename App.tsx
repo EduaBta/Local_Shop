@@ -6,14 +6,15 @@ import LojaDetalhes from './src/screens/Details/LojaDetalhes';
 import { Loja } from './src/@types/loja';
 
 export type RootStackParamList = {
-  Home: undefined; //Não recebe parâmetros;
-  Detalhes: {loja:Loja} ; // Precisa receber um objeto Loja
+  Home: undefined;
+  Detalhes: { loja: Loja };
 };
-const Stack = createStackNavigator();
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer> {/* ✅ Sem genérico */}
       <Stack.Navigator screenOptions={{ headerTintColor: '#27ae60' }}>
         <Stack.Screen 
           name="Home" 
@@ -23,7 +24,7 @@ export default function App() {
         <Stack.Screen 
           name="Detalhes" 
           component={LojaDetalhes} 
-          options={({ route }) => ({ title: route.params.Loja.nome })} 
+          options={({ route }) => ({ title: route.params.loja.nome })}
         />
       </Stack.Navigator>
     </NavigationContainer>

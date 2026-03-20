@@ -13,8 +13,10 @@ type RootStackParamList = {
   Detalhes: { loja: Loja };
 };
 
+type NavigationProp = StackNavigationProp<RootStackParamList, 'Detalhes'>;
+
 export default function LojaCard({ loja }: Props) {
-  const navigation = useNavigation<StackNavigationProp>();
+  const navigation = useNavigation<NavigationProp>(); 
   return (
     <TouchableOpacity 
       style={styles.card}
@@ -29,4 +31,3 @@ export default function LojaCard({ loja }: Props) {
     </TouchableOpacity>
   );
 }
-
