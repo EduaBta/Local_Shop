@@ -23,3 +23,16 @@ export function useCadastroLoja() {
 
   const handleSalvar = () => {
     if (!formData.nome || !formData.categoria || !formData.distancia) {
+      Alert.alert('Atenção', 'Preencha todos os campos obrigatórios (*)');
+      return;
+    }
+
+    // Simulação de salvamento (No Mês 3 conectaremos à API)
+    console.log('Enviando para o servidor:', formData);
+
+    Alert.alert('Sucesso', 'Local cadastrado com sucesso!', [
+      { text: 'OK', onPress: () => navigation.goBack() }
+    ]);
+  };
+  return { formData, updateField, handleSalvar };
+}

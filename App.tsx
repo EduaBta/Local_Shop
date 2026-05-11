@@ -7,6 +7,7 @@ import LojaCard from './src/components/LojaCard';
 //import { Loja } from './src/types'; // Se você criou o arquivo de tipos
 import { Loja } from './src/@types/loja'; // Se você criou o arquivo de tipos em @types
 import { RootStackParamList } from './src/types'
+import CadastroLoja from './src/screens/cadastroLoja/CadastroLoja';
 
 //const Stack = createStackNavigator();
 const Stack = createStackNavigator<RootStackParamList>();
@@ -27,6 +28,11 @@ export default function App() {
           name="Detalhes"
           component={LojaDetalhes}
           options={({ route }) => ({ title: route.params.loja.nome })}
+        />
+        <Stack.Screen
+          name="Cadastro"
+          component={CadastroLoja}
+          options={{ title: 'Novo Local'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

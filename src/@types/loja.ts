@@ -11,4 +11,5 @@ export interface Loja {
   categoria: string;
   imagem: string;
   distancia: string;
+  descricao?: string;
 }
