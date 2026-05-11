@@ -1,6 +1,7 @@
-import {Loja} from './@types/loja';
+import { Loja } from './@types/loja';
 
 export type RootStackParamList = {
-    Home: undefined;
-    Detalhes: {loja: Loja};
+  Home: undefined;
+  Detalhes: { loja: Loja };
 };
+

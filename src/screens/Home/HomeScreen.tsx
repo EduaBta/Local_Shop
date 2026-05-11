@@ -9,7 +9,7 @@ export default function HomeScreen() {
 
   return (
     <View style={{ flex: 1 }}>
-      <FlatList
+      <FlatList 
         data={lojas}
         renderItem={({ item }) => <LojaCard loja={item} />}
       />

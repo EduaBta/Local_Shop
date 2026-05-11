@@ -5,6 +5,7 @@ import { Loja } from '../@types/loja'; // Se você criou o arquivo de tipos em @
 import styles from './StyleLojaCard';
 import { RootStackParamList } from '../types'; // Se você criou o arquivo de tipos
 
+
 type NavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
 interface Props {
@@ -13,9 +14,8 @@ interface Props {
 
 export default function LojaCard({ loja }: Props) {
   const navigation = useNavigation<NavigationProp>();
-
   return (
-    <TouchableOpacity
+    <TouchableOpacity 
       style={styles.card}
       onPress={() => navigation.navigate('Detalhes', { loja })}
     >
@@ -28,3 +28,4 @@ export default function LojaCard({ loja }: Props) {
     </TouchableOpacity>
   );
 }
+

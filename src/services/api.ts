@@ -8,4 +8,5 @@ export const LojaService = {
       setTimeout(() => resolve(LOJAS), 1000);
     });
   }
-};      
+};
+

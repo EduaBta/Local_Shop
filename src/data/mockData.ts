@@ -1,4 +1,6 @@
-export const LOJAS = [
+import { Loja } from '../types';
+
+export const LOJAS: Loja[] = [
   {
     id: '1',
     nome: 'Padaria do João',
