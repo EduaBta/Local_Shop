@@ -1,0 +1,40 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import HomeScreen from './src/screens/Home/HomeScreen';
+import LojaDetalhes from './src/screens/Details/LojaDetalhes';
+import LojaCard from './src/components/LojaCard';
+import CadastroLoja from './src/screens/cadastroLoja/CadastroLoja';
+//import { Loja } from './src/types'; // Se você criou o arquivo de tipos
+import { Loja } from './src/@types/loja'; // Se você criou o arquivo de tipos em @types
+import { RootStackParamList } from './src/types'
+
+//const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
+
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator 
+        id="mainStack"
+        screenOptions={{ headerTintColor: '#27ae60' }}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'LocalShop' }}
+        />
+        <Stack.Screen
+          name="Detalhes"
+          component={LojaDetalhes}
+          options={({ route }) => ({ title: route.params.loja.nome })}
+        />
+        <Stack.Screen 
+          name="Cadastro" 
+          component={CadastroLoja} 
+          options={{ title: 'Novo Local' }} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
