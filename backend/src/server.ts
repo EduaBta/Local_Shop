@@ -44,7 +44,7 @@ app.post('/lojas', async (request, response) => {
     const novaLoja = {
       nome,
       categoria,
-      imagem: imagem || 'https://',
+      imagem: imagem || '',
       distancia,
       descricao: descricao || '',
     };
@@ -75,11 +75,10 @@ app.get('/', (request, response) => {
     message: 'API do LocalShop rodando com sucesso!'
   });
 });
-
+*/
 
 // Inicia o servidor e mantém ele “ouvindo” requisições
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
-*/

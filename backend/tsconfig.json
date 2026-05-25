@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2022", // Versão do JavaScript gerado
-    "module": "commonjs", // Sistema de módulos compatível com Node
+    "module": "NodeNext", // Sistema de módulos compatível com Node
     "rootDir": "./src", // Pasta onde está o código-fonte TS
     "outDir": "./dist", // Pasta onde será gerado o JS compilado
     "esModuleInterop": true, // Permite import padrão de módulos CommonJS
