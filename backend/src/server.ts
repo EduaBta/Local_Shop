@@ -2,6 +2,7 @@
 import express from 'express';
 import admin from 'firebase-admin';
 import { readFileSync } from 'fs';
+import { request } from 'http';
 
 // Cria uma instância do aplicativo Express
 const app = express();
@@ -65,6 +66,27 @@ app.post('/lojas', async (request, response) => {
   }
 });
 
+
+// Rota para Buscar todas as lojas
+app.get('/lojas', async (request, response) => {
+  try {
+    const lojasRef = db.collection('lojas');
+    const snapshot = await lojasRef.get();
+
+    const listaLojas: any[] = [];
+
+    snapshot.forEach(doc => {
+      listaLojas.push({
+        id: doc.id,      // O ID gerado automaticamente pelo Firebase
+        ...doc.data()   // Os dados internos do documento (nome, categoria...)
+      });
+    });
+
+    return response.json(listaLojas);
+  } catch (error) {
+    return response.status(500).json({ error: 'Erro ao buscar lojas no banco.' });
+  }
+});
 
 
 // Define uma rota GET na raiz da API ('/')
